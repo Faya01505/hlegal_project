@@ -1,0 +1,145 @@
+.footer {
+    background: #F5F5FA;
+    padding: 20px;
+    border-top: 1px solid #E6E6F0;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+
+        .footer__address {
+            color: $main-color;
+            font-size: 16px;
+
+            .dot {
+                margin: 0 6px;
+                color: #aaa;
+                font-weight: bold;
+            }
+        }
+
+        .footer__map-link {
+            color: $regular-color;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .footer__copyright {
+            font-size: 16px;
+            font-weight: 400;
+            color: $grey-text;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        .dot {
+            margin: 0 6px;
+            color: #aaa;
+            font-weight: bold;
+        }
+
+        .footer__social svg {
+            width: 24px;
+            height: 24px;
+            fill: $regular-color;
+            &:hover{
+                fill: $color-accent;
+            }
+        }
+
+        .footer__phone {
+            font-weight: 700;
+            color: $alt-color;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .footer__email {
+            color: $regular-color;
+            font-weight: 600;
+            text-decoration: none;
+            &:hover{
+                color: $color-accent;
+            }
+        }
+    }
+
+
+    @media (max-width: 1024px) {
+        &__top {
+
+            .footer__address,
+            .footer__copyright {
+                font-size: 14px;
+            }
+        }
+    }
+
+
+    @media (max-width: 480px) {
+
+
+        .dot {
+            display: none;
+        }
+
+
+        &__top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+
+            .footer__address {
+                order: 1;
+                font-size: 16px;
+            }
+
+            .footer__map-link {
+                order: 2;
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+
+            .footer__copyright {
+                order: 5;
+                font-size: 14px;
+                color: $grey-text;
+                margin-top: 16px;
+            }
+        }
+        &__bottom {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 12px;
+
+            .footer {
+                    &__social {
+                        order: 3;
+                    }
+            
+                    &__phone {
+                        order: 4;
+                        font-size: 18px;
+                    }
+            
+                    &__email {
+                        order: 5;
+                        font-size: 16px;
+                    }
+                }
+        }
+    }
+}

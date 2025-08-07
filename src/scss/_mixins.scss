@@ -1,0 +1,25 @@
+@mixin viewport-md {
+  @media (min-width: 767px) {
+    @content;
+  }
+}
+
+@mixin text-gradient {
+  background: linear-gradient(90.13deg, #f0145A, #ef8080 99.96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin flex-spasing($columnCount, $gap) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+
+  >div {
+    width: calc((100% - (#{$columnCount} - 1) * #{$gap}) / #{$columnCount});
+  }
+}
+
+
